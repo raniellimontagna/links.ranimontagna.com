@@ -69,13 +69,14 @@ const jsonLd = {
 
         <nav class="links-list" aria-label="Links principais">
           {
-            profile.links.map((link) => (
+            profile.links.map((link, index) => (
               <a
                 class="link-button"
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.ariaLabel}
+                style={`--index: ${index}`}
               >
                 <span class="link-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" set:html={iconMarkup[link.icon]} />
