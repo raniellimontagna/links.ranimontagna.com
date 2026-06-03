@@ -54,11 +54,23 @@ const jsonLd = {
     <main class="page-shell">
       <section class="profile-card" aria-labelledby="profile-title">
         <a
-          class="brand-mark"
+          class="identity-mark"
           href="https://ranimontagna.com"
           aria-label="Abrir site de Ranielli Montagna"
         >
-          <img src="/logo/white.svg" alt="" width="72" height="72" />
+          <span class="portrait-frame">
+            <img
+              src="/images/ranielli-montagna.webp"
+              alt="Retrato de Ranielli Montagna"
+              width="136"
+              height="136"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </span>
+          <span class="brand-badge" aria-hidden="true">
+            <img src="/logo/white.svg" alt="" width="44" height="44" />
+          </span>
         </a>
 
         <div class="profile-copy">
