@@ -2,7 +2,7 @@ import { profile } from '../data/profile'
 
 export const siteMetadata = {
   title: 'Ranielli Montagna | Links',
-  description: `${profile.title} em React, React Native, Node.js e TypeScript, criando produtos Web/Mobile em escala.`,
+  description: `${profile.name} — ${profile.title}. ${profile.subtitle}`,
   url: 'https://links.ranimontagna.com',
   image: '/og-image.png',
   themeColor: '#5844ff',

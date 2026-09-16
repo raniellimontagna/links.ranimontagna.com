@@ -180,16 +180,26 @@ a {
   animation: copy-rise 620ms var(--ease-out-quint) 360ms both;
 }
 
-.handle {
-  margin: 0;
-  font-size: clamp(1.2rem, 4vw, 1.55rem);
-  font-weight: 800;
-}
-
 h1 {
   margin: 0;
-  font-size: clamp(1.05rem, 3.4vw, 1.28rem);
+  font-size: clamp(1.35rem, 4.4vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  margin: 0;
+  font-size: clamp(0.98rem, 3.2vw, 1.12rem);
   font-weight: 700;
+  text-wrap: balance;
+}
+
+.handle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .subtitle {
