@@ -1,21 +1,20 @@
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./public/logo/white.svg" />
-    <img src="./public/logo/black.svg" alt="Ranielli Montagna" width="88" height="88" />
+    <img src="./public/logo/black.svg" alt="Ranielli Montagna logo" width="88" height="88" />
   </picture>
 
   <h1>links.ranimontagna.com</h1>
 
-  <p>
-    Uma página de links pessoal, estática e first-party, criada com Astro para substituir o Linktree nos perfis sociais.
-  </p>
+  <p>A static, first-party links page built with Astro that replaces Linktree in Ranielli Montagna's social profiles.</p>
 
   <p>
-    <img src="https://img.shields.io/badge/Astro-6.4.4-BC52EE?style=flat-square&logo=astro&logoColor=white" alt="Astro 6.4.4" />
-    <img src="https://img.shields.io/badge/TypeScript-6.x-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript 6" />
-    <img src="https://img.shields.io/badge/pnpm-11.x-F69220?style=flat-square&logo=pnpm&logoColor=white" alt="pnpm 11" />
-    <img src="https://img.shields.io/badge/output-static-111111?style=flat-square" alt="Static output" />
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/raniellimontagna/links.ranimontagna.com" alt="License" /></a>
+    <img src="https://img.shields.io/github/package-json/dependency-version/raniellimontagna/links.ranimontagna.com/astro?logo=astro" alt="Astro version" />
+    <img src="https://img.shields.io/github/package-json/dependency-version/raniellimontagna/links.ranimontagna.com/dev/typescript?logo=typescript" alt="TypeScript version" />
   </p>
+
+  <p><strong>Live:</strong> <a href="https://links.ranimontagna.com">links.ranimontagna.com</a></p>
 </div>
 
 ## Preview
@@ -31,129 +30,83 @@
   </tr>
 </table>
 
-## Sobre
+## About
 
-Este repositório contém a versão própria do meu agregador de links pessoal para `links.ranimontagna.com`.
+The page keeps the clarity of a Linktree-style profile while running on its own domain, with the portfolio's visual identity and full control over content, performance and deploys.
 
-A proposta é manter a clareza de uma página estilo Linktree, mas com domínio próprio, identidade visual do portfólio e controle total sobre conteúdo, performance e deploy.
+## Features
 
-## Destaques
+- One static page with no backend and no client-side JavaScript beyond the JSON-LD block.
+- Mobile-first layout tuned for traffic from social media bios.
+- Links and copy kept as typed data in a single file.
+- `rel="me"` on links to personal profiles.
+- Metadata, Open Graph, Twitter Card and JSON-LD.
+- Light and dark favicons, plus the RM brand assets from the portfolio.
+- Respects `prefers-reduced-motion`.
+- Vitest checks for the public links and metadata.
 
-- Página única, estática e sem runtime backend.
-- Construída com Astro e TypeScript.
-- Visual mobile-first, otimizado para bios de redes sociais.
-- Assets da marca RM copiados do portfólio principal.
-- Links e copy mantidos em dados tipados.
-- Metadata, Open Graph, Twitter Card e JSON-LD configurados.
-- Testes de sanidade para links públicos e metadata.
+## Tech stack
 
-## Stack
-
-| Camada | Tecnologia |
+| Layer | Technology |
 | --- | --- |
-| Framework | Astro |
-| Linguagem | TypeScript |
-| Estilo | CSS global |
-| Testes | Vitest |
+| Framework | Astro (static output) |
+| Language | TypeScript |
+| Styling | Plain global CSS |
+| Tests | Vitest |
 | Package manager | pnpm |
-| Output | Static site |
+| Hosting | Vercel |
 
-## Rodando Localmente
+## Getting started
 
-Pré-requisitos:
-
-- Node.js `>=22.12.0`
-- pnpm `11.x`
-
-Instale as dependências:
+Prerequisites: Node.js 22.12 or newer and pnpm 11.
 
 ```bash
 pnpm install
-```
-
-Inicie o servidor de desenvolvimento:
-
-```bash
 pnpm dev
 ```
 
-O site fica disponível em:
-
-```text
-http://localhost:4321
-```
+The site runs at `http://localhost:4321`.
 
 ## Scripts
 
-| Comando | Descrição |
+| Command | What it does |
 | --- | --- |
-| `pnpm dev` | Inicia o servidor local do Astro |
-| `pnpm build` | Gera a versão estática em `dist/` |
-| `pnpm preview` | Serve o build localmente |
-| `pnpm check` | Executa validação do Astro e TypeScript |
-| `pnpm test` | Executa os testes com Vitest |
+| `pnpm dev` | Start the Astro dev server |
+| `pnpm build` | Build the static site into `dist/` |
+| `pnpm preview` | Serve the build locally |
+| `pnpm check` | Run Astro and TypeScript checks |
+| `pnpm test` | Run the Vitest suite |
+| `pnpm test:watch` | Run Vitest in watch mode |
 
-## Estrutura
+Before publishing a change, run `pnpm test`, `pnpm check` and `pnpm build`.
+
+## Project structure
 
 ```text
 .
 ├── docs/
-│   ├── assets/                 # Screenshots usados no README
-│   └── superpowers/            # Spec e plano de implementação
+│   ├── assets/                 # README screenshots
+│   └── superpowers/            # Design spec and implementation plan
 ├── public/
-│   ├── logo/                   # Logos RM copiadas do portfólio
+│   ├── images/                 # Profile photos
+│   ├── logo/                   # RM logos copied from the portfolio
 │   └── og-image.png
 ├── src/
-│   ├── data/profile.ts         # Identidade, copy e links públicos
-│   ├── lib/metadata.ts         # Metadata centralizada
-│   ├── pages/index.astro       # Página principal
-│   └── styles/global.css       # Layout e visual system
+│   ├── data/profile.ts         # Identity, copy and public links
+│   ├── lib/metadata.ts         # Centralized metadata
+│   ├── pages/index.astro       # The page
+│   └── styles/global.css       # Layout and visual system
 └── package.json
 ```
 
-## Conteúdo
+## Editing the links
 
-Os links principais ficam em:
-
-[src/data/profile.ts](./src/data/profile.ts)
-
-O arquivo contém:
-
-- Nome e handle.
-- Posicionamento técnico.
-- Lista ordenada de links públicos.
-- Labels acessíveis para navegação assistiva.
+All content lives in [`src/data/profile.ts`](src/data/profile.ts): name and handle, title and subtitle, and the ordered list of links with their accessible labels. The tests in `src/data/profile.test.ts` pin the link order and the `rel="me"` set, so update them together with the data.
 
 ## Deploy
 
-URL alvo de produção:
+`pnpm build` writes a fully static site to `dist/`. Production runs on Vercel, and any static host works.
 
-```text
-https://links.ranimontagna.com
-```
+## License
 
-O projeto gera output estático e pode ser publicado em Vercel, Cloudflare Pages, Netlify ou qualquer host de arquivos estáticos.
-
-Build de produção:
-
-```bash
-pnpm build
-```
-
-Diretório gerado:
-
-```text
-dist/
-```
-
-## Qualidade
-
-Antes de publicar alterações:
-
-```bash
-pnpm test
-pnpm check
-pnpm build
-```
-
-Esses comandos validam os dados públicos, metadata, tipos Astro/TypeScript e o build estático.
+Released under the [MIT License](LICENSE).
