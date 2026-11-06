@@ -1,0 +1,8 @@
+{
+  // Deploy: pnpm build && npx wrangler deploy
+  "name": "links-ranimontagna",
+  "account_id": "3a9dc0a9d9f05ff97021ce237e3ed92f",
+  "compatibility_date": "2026-11-01",
+  "assets": { "directory": "./dist" },
+  "routes": [{ "pattern": "links.ranimontagna.com", "custom_domain": true }]
+}
