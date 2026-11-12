@@ -58,6 +58,14 @@ const jsonLd = {
     <meta name="twitter:description" content={siteMetadata.description} />
     <meta name="twitter:image" content={`${siteMetadata.url}${siteMetadata.image}`} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <!-- Umami (self-hosted, cookieless): counts visits only on the public host. -->
+    <script
+      is:inline
+      defer
+      src="https://analytics.ranimontagna.com/script.js"
+      data-website-id="61b6e330-1a3a-40c6-8c56-f7e1c3e8591b"
+      data-domains="links.ranimontagna.com"
+    ></script>
   </head>
   <body>
     <main class="page-shell">
