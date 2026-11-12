@@ -110,6 +110,8 @@ All content lives in [`src/data/profile.ts`](src/data/profile.ts): name and hand
 
 ## Monitoring
 
+- **Visits:** Umami, self-hosted at https://analytics.ranimontagna.com (website `links.ranimontagna.com`). Cookieless, deferred, and it only reports from `links.ranimontagna.com`.
+
 Errors and performance go to Sentry, org `raniellimontagna`, project `links-ranimontagna`. The SDK never competes with first paint:
 
 - `src/lib/sentry-loader.ts` is the only page script (about 1 KB gzipped). It waits 2 s, then for the browser to go idle (`requestIdleCallback`, 5 s timeout; 3 s more where it is missing), and only then imports the SDK chunk (`src/lib/sentry-client.ts`). An `error` or `unhandledrejection` before that loads the SDK at once and reports it.
